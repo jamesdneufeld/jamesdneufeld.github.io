@@ -1,13 +1,52 @@
-<!doctype html>
-<html>
-<title>James Neufeld has a GitHub Page</title>
-<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="styles.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body>
-<article>
-  <h1>James has a GitHub Page</h1>
-  <p>Check out my web design examples at <a href="https://github.com/jamesdneufeld">github.com/jamesdneufeld</a>, follow me on Twitter <a href="https://twitter.com/jamesneufeld">@jamesneufeld</a> or visit <a href="http://jamesneufeld.ca/">jamesneufeld.ca</a>.</p>
-</article>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>James Neufeld</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Teaching designers to code with confidence — explore James Neufeld’s foundational HTML & CSS learning library and creative coding resources." />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>James Neufeld</h1>
+      <p class="subtitle">Teaching designers to code with confidence</p>
+
+      <div class="links">
+        <a href="https://codepen.io/jamesneufeld" target="_blank" rel="noopener noreferrer">CodePen</a>
+        <a href="https://github.com/jamesdneufeld" target="_blank" rel="noopener noreferrer">GitHub Repositories</a>
+        <a href="http://jamesneufeld.ca/" target="_blank" rel="noopener noreferrer">Personal Site</a>
+      </div>
+
+      <div class="featured-section">
+        <h2>Featured Series</h2>
+        <p><strong>Introduction to HTML & CSS Foundational Skills</strong></p>
+        <p>Your creative path to digital self-sufficiency — build with confidence, craft with code.</p>
+        <p><a href="https://www.notion.so/jamesneufeld/Introduction-to-HTML-CSS-Foundational-Skills-1b8ffef6256f80ca9e20fd0b42656bd6" class="cta-link" target="_blank" rel="noopener noreferrer">Explore my library of 150+ articles →</a></p>
+      </div>
+
+      <div class="resources-section">
+        <h2>Learning Resources</h2>
+        <p>I've written extensively about web development for designers. Key topics include:</p>
+
+        <ul>
+          <li><strong>HTML & CSS Foundations</strong> — From basics to advanced layout techniques</li>
+          <li><strong>Design-to-Code Workflow</strong> — Bridging Figma and development</li>
+          <li><strong>Portfolio Development</strong> — Building sites that showcase your work</li>
+          <li><strong>Career Skills</strong> — Working effectively with developers</li>
+        </ul>
+
+        <p class="note">
+          <em>Full article library available on my <a href="https://www.notion.so/jamesneufeld/Introduction-to-HTML-CSS-Foundational-Skills-1b8ffef6256f80ca9e20fd0b42656bd6" target="_blank" rel="noopener noreferrer">Notion site</a>.</em>
+        </p>
+      </div>
+
+      <!-- Copyright inside the same wrapper -->
+      <p class="copyright">© 2013–<span id="year"></span> James Neufeld. All rights reserved.</p>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

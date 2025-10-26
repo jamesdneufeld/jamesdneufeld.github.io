@@ -1,17 +1,217 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,700);
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
 
-body { font: 100% 'Open Sans', sans-serif; padding: 2em; background: url(city-lights-and-lupins-by-wichan-yingyongsomsawas.jpg) no-repeat center top fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
-h1 { font-size: 3em; line-height: 1; margin: 0; margin-bottom: 0.2em; font-weight: 400; color: #7a4899; }
-h2 { font-size: 2em; line-height: 1; margin: 0; font-weight: 400; color: #f6d985; letter-spacing: 0.1em; }
-p { font-size: 1.25em; line-height: 1.5; margin: 0px; color: #223a2e; }
-article { display: block; padding: 2em; margin: 2em; width: 50%; }
-a { text-decoration: none; color: #402a73; }
-a:hover { color: #b83058; }
-body:after { content: ""; background: url(dot-hatch-fine.png) repeat; top: 0; left: 0; bottom: 0; right: 0; position: absolute; z-index: -1; }
+:root {
+  --primary-purple: #7a4899;
+  --vibrant-orange: #ff7a11;
+  --dark-green: #223a2e;
+  --link-blue: #402a73;
+  --link-hover: #b83058;
+  --background-light: rgba(255, 255, 255, 0.7);
+  --card-light: rgba(255, 255, 255, 0.6);
+}
 
-    @media only screen and (max-width : 768px) {
-    article { width: 80%; padding: 1em; margin: 1em auto; background: rgba(255,255,255,0.4); }
-	h1 { font-size: 2em; }
-	body {background-attachment: scroll;}
+/* === Base Styles === */
+body {
+  font-family: "Syne", sans-serif;
+  padding: 2em;
+  background: #faf9f6 url("city-lights-and-lupins-by-wichan-yingyongsomsawas.jpg") no-repeat center top fixed;
+  background-size: cover;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  position: relative;
+}
 
+/* Subtle overlay for readability */
+body::after {
+  content: "";
+  background: url("dot-hatch-fine.png") repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+.wrapper {
+  background: var(--background-light);
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.8s ease;
+}
+
+/* === Typography === */
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+  color: var(--primary-purple);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  font-size: 1.4em;
+  text-align: center;
+  color: var(--dark-green);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+/* === Links Section === */
+.links {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.links a {
+  display: inline-block;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--link-blue);
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--link-hover);
+  background: var(--card-light);
+}
+
+/* === Focus States for Accessibility === */
+.links a:focus,
+.cta-link:focus {
+  outline: 2px solid var(--vibrant-orange);
+  outline-offset: 2px;
+}
+
+/* === Headings & Paragraphs === */
+h2 {
+  font-size: 2em;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--vibrant-orange);
+  margin: 3rem 0 1rem 0;
+  border-bottom: 2px solid var(--vibrant-orange);
+  padding-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 1rem 0;
+  color: var(--dark-green);
+}
+
+/* === Sections === */
+.featured-section {
+  background: var(--card-light);
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin: 3rem 0;
+  border-left: 4px solid var(--primary-purple);
+}
+
+.resources-section {
+  margin: 3rem 0;
+}
+
+/* === Lists & Notes === */
+ul {
+  font-size: 1.1em;
+  color: var(--dark-green);
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.8rem 0;
+  line-height: 1.5;
+}
+
+.cta-link {
+  color: var(--link-blue);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cta-link:hover {
+  color: var(--link-hover);
+}
+
+.note {
+  font-style: italic;
+  color: #666;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-blue);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* === Fade-In Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Mobile Adjustments === */
+@media (max-width: 768px) {
+  body {
+    padding: 1em;
+  }
+
+  .wrapper {
+    padding: 1.2rem;
+    margin: 1rem auto;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+  }
+
+  .links a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .featured-section {
+    padding: 1rem;
+  }
+}
+
+/* === Copyright inside wrapper === */
+.copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 2rem;
 }
